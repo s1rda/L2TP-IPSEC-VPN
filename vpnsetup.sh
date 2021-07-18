@@ -6,10 +6,7 @@
 # DO NOT RUN THIS SCRIPT ON YOUR PC OR MAC!
 #
 # Copyright (C) 2021 Kar3nGr1g
-# Based on the work of Thomas Sarlandie (Copyright 2021)
-#
-# This work is licensed under the Creative Commons Attribution-ShareAlike 3.0
-# Unported License: http://creativecommons.org/licenses/by-sa/3.0/
+# Based on the work of Kar3nGr1g (Copyright 2021)
 #
 # Attribution required: please include my name in any derivative and let me
 # know how you have improved it!
