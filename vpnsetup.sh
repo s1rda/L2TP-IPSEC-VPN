@@ -57,7 +57,6 @@ case $os_type in
     ;;
   *)
     echo "Error: This script only supports Ubuntu and Debian." >&2
-    echo "For CentOS/RHEL, use https://git.io/vpnsetup-centos" >&2
     exit 1
     ;;
 esac
@@ -67,7 +66,7 @@ if [ "$os_ver" = "8" ] || [ "$os_ver" = "jessiesid" ]; then
   exiterr "Debian 8 or Ubuntu < 16.04 is not supported."
 fi
 if [ "$os_ver" = "10" ] && [ ! -e /dev/ppp ]; then
-  exiterr "/dev/ppp is missing. Debian 10 users, see: https://git.io/vpndebian10"
+  exiterr "/dev/ppp is missing."
 fi
 
 if [ -f /proc/user_beancounters ]; then
@@ -189,7 +188,7 @@ bigecho "Installing Fail2Ban to protect SSH..."
 
 bigecho "Downloading IKEv2 script..."
 
-ikev2_url="https://github.com/hwdsl2/setup-ipsec-vpn/raw/master/extras/ikev2setup.sh"
+ikev2_url="https://github.com/Kar3nGr1g/setup-ipsec-vpn/blob/main/ikev2setup.sh"
 (
   set -x
   wget -t 3 -T 30 -q -O ikev2.sh "$ikev2_url"
@@ -250,8 +249,8 @@ L2TP_LOCAL=${VPN_L2TP_LOCAL:-'192.168.42.1'}
 L2TP_POOL=${VPN_L2TP_POOL:-'192.168.42.10-192.168.42.250'}
 XAUTH_NET=${VPN_XAUTH_NET:-'192.168.43.0/24'}
 XAUTH_POOL=${VPN_XAUTH_POOL:-'192.168.43.10-192.168.43.250'}
-DNS_SRV1=${VPN_DNS_SRV1:-'8.8.8.8'}
-DNS_SRV2=${VPN_DNS_SRV2:-'8.8.4.4'}
+DNS_SRV1=${VPN_DNS_SRV1:-'9.9.9.9'}
+DNS_SRV2=${VPN_DNS_SRV2:-'1.1.1.1'}
 DNS_SRVS="\"$DNS_SRV1 $DNS_SRV2\""
 [ -n "$VPN_DNS_SRV1" ] && [ -z "$VPN_DNS_SRV2" ] && DNS_SRVS="$DNS_SRV1"
 
@@ -542,10 +541,6 @@ Username: $VPN_USER
 Password: $VPN_PASSWORD
 
 Write these down. You'll need them to connect!
-
-Important notes:   https://git.io/vpnnotes
-Setup VPN clients: https://git.io/vpnclients
-IKEv2 guide:       https://git.io/ikev2
 
 ================================================
 
