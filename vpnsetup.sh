@@ -5,8 +5,8 @@
 #
 # DO NOT RUN THIS SCRIPT ON YOUR PC OR MAC!
 #
-# Copyright (C) 2021 Kar3nGr1g
-# Based on the work of Kar3nGr1g (Copyright 2021)
+# Copyright (C) 2021 S1rda
+# Based on the work of S1rda (Copyright 2021)
 #
 # Attribution required: please include my name in any derivative and let me
 # know how you have improved it!
